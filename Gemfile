@@ -46,9 +46,11 @@ gem 'devise'
 gem 'haml-rails'
 gem 'less-rails'
 gem 'puma'
-gem 'simple_form', '>= 3.0.0.rc'
 gem 'therubyracer', :platform=>:ruby
 gem 'twitter-bootstrap-rails'
+gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'bson_ext'
+gem 'simple_form'
 
 group :development do
   gem 'better_errors'

@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: ddfe7773d4689473525e2925d232889b4d6d6f90
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 2.0.beta3)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -34,6 +44,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bson (2.0.0.rc3)
+    bson_ext (1.5.1)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -139,10 +151,15 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
+    moped (2.0.0.beta3)
+      bson (~> 2.0.0.rc3)
+      optionable (~> 0.1.1)
     multi_json (1.8.2)
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    optionable (0.1.1)
+    origin (1.1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     puma (2.6.0)
@@ -240,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bson_ext
   capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails
@@ -258,6 +276,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  mongoid (~> 4)!
   puma
   quiet_assets
   rails (= 4.0.0)
@@ -266,7 +285,7 @@ DEPENDENCIES
   rb-inotify
   rspec-rails
   sass-rails (~> 4.0.0)
-  simple_form (>= 3.0.0.rc)
+  simple_form
   therubyracer
   turbolinks
   twitter-bootstrap-rails
