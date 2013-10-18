@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  = @article.url
+%p
+  %b Site text:
+  = @article.site_text
+%p
+  %b Author:
+  = @article.author
+%p
+  %b Headline:
+  = @article.headline
+%p
+  %b Posted by:
+  = @article.posted_by
+%p
+  %b Posted on:
+  = @article.posted_on
+
+= link_to 'Edit', edit_article_path(@article)
+\|
+= link_to 'Back', articles_path

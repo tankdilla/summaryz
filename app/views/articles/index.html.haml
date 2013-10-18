@@ -1,0 +1,29 @@
+%h1 Listing articles
+
+%table
+  %tr
+    %th Url
+    %th Site text
+    %th Author
+    %th Headline
+    %th Posted by
+    %th Posted on
+    %th
+    %th
+    %th
+
+  - @articles.each do |article|
+    %tr
+      %td= article.url
+      %td= article.site_text
+      %td= article.author
+      %td= article.headline
+      %td= article.posted_by
+      %td= article.posted_on
+      %td= link_to 'Show', article
+      %td= link_to 'Edit', edit_article_path(article)
+      %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Article', new_article_path
