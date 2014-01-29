@@ -48,7 +48,7 @@ gem 'less-rails'
 gem 'puma'
 gem 'therubyracer', :platform=>:ruby
 gem 'twitter-bootstrap-rails'
-gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'simple_form'
 
@@ -65,6 +65,8 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'debugger'
+  # gem 'jazz_hands'
 end
 
 group :development, :test do
