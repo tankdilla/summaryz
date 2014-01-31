@@ -36,5 +36,7 @@ module Summaryz
     # config.i18n.default_locale = :de
 
     config.i18n.enforce_available_locales = false
+
+    config.assets.initialize_on_precompile = false
   end
 end

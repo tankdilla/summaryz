@@ -1,0 +1,20 @@
+#display_sentence {
+  display: inline;
+}
+
+#upvote {
+  display: inline;
+}
+
+.article-headline {
+  display: inline;
+}
+.article-url {
+  font-size: small;
+  color: gray;
+  display: inline;
+}
+
+.article-index {
+  list-style: none
+}

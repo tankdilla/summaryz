@@ -1,0 +1,16 @@
+%p
+  #display_sentence
+    = @sentence.sentence_text
+    #upvote
+      - if @sentence.vote.blank?
+        = simple_form_for([@article, @sentence], html: {class: 'form-horizontal' }) do |f|
+          = f.hidden_field :vote, :value => 1
+          = f.submit 'upvote'
+      - else
+        (upvoted)
+
+= link_to 'Edit', edit_article_sentence_path(@article, @sentence)
+\|
+= link_to 'Destroy', [@article, @sentence], :method => :delete, :data => { :confirm => 'Are you sure?' }
+\|
+= link_to 'Back', @article

@@ -1,0 +1,7 @@
+%h1 Editing sentence
+
+= render 'form'
+
+= link_to 'Show', [@article, @sentence]
+\|
+= link_to 'Back', article_path(@article, view_sentences: 1)

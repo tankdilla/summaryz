@@ -13,16 +13,20 @@ class Article
 
   embeds_many :sentences
 
-  # after_create :parse_site_text
-end
+  after_create :parse_sentences
 
-def parse_site_text
-  site_text.split('.').each do |sentence|
+  def parse_sentences
+    site_text.scan(/.+?[?!.]/).each do |sentence|
 
-    begin
-      sentences << Sentence.create!(sentence_text: sentence.strip)
-    rescue Exception => e
-      puts e.message
+      begin
+        sentences << Sentence.new(sentence_text: sentence)
+      rescue Exception => e
+        puts e.message
+      end
     end
+
+    sentences
   end
+
 end
+

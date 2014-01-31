@@ -1,5 +1,10 @@
 Summaryz::Application.routes.draw do
-  resources :articles
+  devise_for :users
+  resources :articles do
+    resources :sentences do
+      resources :sentence_words
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

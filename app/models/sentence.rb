@@ -7,7 +7,7 @@ class Sentence
 
   embeds_many :sentence_words
 
-  # after_save :parse_sentence_words
+  after_save :parse_sentence_words
 
   def parse_sentence_words
     sentence_text.gsub(/[^a-zA-Z\d]/, ' ').split(' ').each do |word|
@@ -17,5 +17,7 @@ class Sentence
         puts e.message
       end
     end
+
+    sentence_words
   end
 end

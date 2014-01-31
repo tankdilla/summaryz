@@ -1,24 +1,36 @@
-%p#notice= notice
-
-%p
-  %b Url:
-  = @article.url
-%p
-  %b Site text:
-  = @article.site_text
-%p
-  %b Author:
-  = @article.author
 %p
   %b Headline:
   = @article.headline
 %p
+  %b Author:
+  = @article.author
+%p
+  %b Url:
+  = @article.url
+%p
   %b Posted by:
   = @article.posted_by
 %p
-  %b Posted on:
-  = @article.posted_on
+  %b Site text:
+  - @article.sentences.each do |s|
 
+    - if params[:view_sentences] == "1"
+      - text = link_to s.sentence_text, article_sentence_path(@article, s)
+    - else
+      - text = s.sentence_text
+
+    - if s.vote
+      %b= text
+    - else
+      = text
+
+- if params[:view_sentences] != "1"
+  = link_to 'View Sentences', article_path(view_sentences: 1)
+- else
+  = link_to 'View Text', @article
+\|
 = link_to 'Edit', edit_article_path(@article)
+\|
+= link_to 'Destroy', @article, :method => :delete, :data => { :confirm => 'Are you sure?' }
 \|
 = link_to 'Back', articles_path
