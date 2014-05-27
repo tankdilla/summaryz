@@ -10,6 +10,14 @@
 %p
   %b Posted by:
   = @article.posted_by
+
+- if @article.sentences.upvoted.present?
+  %p
+    %b Upvoted sentences:
+    %ul
+      - @article.sentences.upvoted.each do |s|
+        %li= s.sentence_text
+
 %p
   %b Site text:
   - @article.sentences.each do |s|

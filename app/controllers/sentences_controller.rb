@@ -58,7 +58,7 @@ class SentencesController < ApplicationController
   def destroy
     @sentence.destroy
     respond_to do |format|
-      format.html { redirect_to sentences_url }
+      format.html { redirect_to article_url(@article, view_sentences: 1) }
       format.json { head :no_content }
     end
   end

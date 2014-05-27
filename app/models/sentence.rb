@@ -9,6 +9,8 @@ class Sentence
 
   after_save :parse_sentence_words
 
+  scope :upvoted, -> { where(vote: "1") }
+
   def parse_sentence_words
     sentence_text.gsub(/[^a-zA-Z\d]/, ' ').split(' ').each do |word|
       begin
