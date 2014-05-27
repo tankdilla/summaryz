@@ -2,12 +2,15 @@
   #display_sentence
     = @sentence.sentence_text
     #upvote
-      - if @sentence.vote.blank?
+      - if @sentence.vote.blank? || @sentence.vote == "0"
         = simple_form_for([@article, @sentence], html: {class: 'form-horizontal' }) do |f|
           = f.hidden_field :vote, :value => 1
           = f.submit 'upvote'
       - else
         (upvoted)
+        = simple_form_for([@article, @sentence], html: {class: 'form-horizontal' }) do |f|
+          = f.hidden_field :vote, :value => 0
+          = f.submit 'downvote'
 
 = link_to 'Edit', edit_article_sentence_path(@article, @sentence)
 \|
