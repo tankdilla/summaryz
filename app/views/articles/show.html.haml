@@ -18,6 +18,15 @@
       - @article.sentences.upvoted.each do |s|
         %li= s.sentence_text
 
+- if @article.proper_nouns.present?
+  %p
+    %b Terms:
+    %ul
+      - @article.proper_nouns.each do |n|
+        %li
+          = n.term
+          = link_to 'Destroy', [@article, n], data: { confirm: 'Are you sure?' }, method: :delete
+
 %p
   %b Site text:
   - @article.sentences.each do |s|
@@ -39,6 +48,6 @@
 \|
 = link_to 'Edit', edit_article_path(@article)
 \|
-= link_to 'Destroy', @article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= link_to 'Destroy', @article, method: :delete, data: { :confirm => 'Are you sure?' }
 \|
 = link_to 'Back', articles_path

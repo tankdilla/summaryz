@@ -1,0 +1,2 @@
+module ProperNounsControllerHelper
+end

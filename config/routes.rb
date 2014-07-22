@@ -1,6 +1,9 @@
 Summaryz::Application.routes.draw do
+
   devise_for :users
   resources :articles do
+    resources :proper_nouns
+
     resources :sentences do
       resources :sentence_words
     end
